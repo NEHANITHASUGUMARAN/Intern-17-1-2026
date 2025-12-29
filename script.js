@@ -55,7 +55,9 @@ const animatedElements = document.querySelectorAll(`
     .footer-bottom,
     .timeline-line,
     .stat,
-    .social-icon
+    .social-icon,
+    .course-card,
+    .coming-soon-card
 `);
 
 animatedElements.forEach(el => observer.observe(el));
@@ -86,6 +88,25 @@ document.querySelectorAll('.cta-button, .primary-button, .secondary-button, .cta
         
         // Show alert (replace with your actual form/modal logic)
         alert('Thank you for your interest! In a real implementation, this would open a consultation booking form.');
+    });
+});
+
+// Add click handlers for program buttons
+document.querySelectorAll('.enroll-button').forEach(button => {
+    button.addEventListener('click', () => {
+        alert('Enrollment form would open here! You would be redirected to the enrollment page.');
+    });
+});
+
+document.querySelectorAll('.download-button').forEach(button => {
+    button.addEventListener('click', () => {
+        alert('Syllabus PDF would download here!');
+    });
+});
+
+document.querySelectorAll('.notify-button').forEach(button => {
+    button.addEventListener('click', () => {
+        alert('Notification sign-up form would open here!');
     });
 });
 
