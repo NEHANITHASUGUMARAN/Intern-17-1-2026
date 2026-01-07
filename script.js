@@ -77,19 +77,63 @@ document.querySelectorAll('.service-card').forEach(card => {
     });
 });
 
+// // Add click handlers for CTA buttons
+// document.querySelectorAll('.cta-button, .primary-button, .secondary-button, .cta-main-button').forEach(button => {
+//     button.addEventListener('click', () => {
+//         // Add click animation
+//         button.style.transform = 'scale(0.95)';
+//         setTimeout(() => {
+//             button.style.transform = '';
+//         }, 100);
+        
+//         // Show alert (replace with your actual form/modal logic)
+//         alert('Thank you for your interest! In a real implementation, this would open a consultation booking form.');
+//     });
+// });
+
 // Add click handlers for CTA buttons
-document.querySelectorAll('.cta-button, .primary-button, .secondary-button, .cta-main-button').forEach(button => {
+document.querySelectorAll('.cta-button, .primary-button, .secondary-button, .cta-main-button')
+.forEach(button => {
     button.addEventListener('click', () => {
-        // Add click animation
+
+        // Click animation
         button.style.transform = 'scale(0.95)';
         setTimeout(() => {
             button.style.transform = '';
         }, 100);
-        
-        // Show alert (replace with your actual form/modal logic)
+
+        // 👉 If Book a Free Call button
+        if (button.classList.contains('cta-main-button')) {
+            window.location.href =
+                'mailto:joshwabj005@gmail.com?subject=Free%20Call%20Request&body=Hi,%20I%20would%20like%20to%20book%20a%20free%20call.';
+            return;
+        }
+
+        // Other buttons behavior
         alert('Thank you for your interest! In a real implementation, this would open a consultation booking form.');
     });
 });
+
+
+
+function openGmail() {
+    const email = "joshwabj005@gmail.com";
+    const subject = "Free Call Request";
+    const body = "Hi, I would like to book a free call.";
+
+    const gmailURL =
+        "https://mail.google.com/mail/?view=cm&fs=1" +
+        "&to=" + encodeURIComponent(email) +
+        "&su=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+    window.open(gmailURL, "_blank");
+}
+
+
+
+
+
 
 // Add click handlers for program buttons
 document.querySelectorAll('.enroll-button').forEach(button => {
@@ -349,6 +393,23 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
+
+
+function openGmail() {
+    const email = "joshwabj005@gmail.com";
+    const subject = "Free Call Request";
+    const body = "Hi, I would like to book a free call.";
+
+    const gmailURL =
+        "https://mail.google.com/mail/?view=cm&fs=1" +
+        "&to=" + encodeURIComponent(email) +
+        "&su=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+    window.open(gmailURL, "_blank");
+}
+
+
 
 // Apply debounce to scroll handler
 const debouncedScroll = debounce(() => {
