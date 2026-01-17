@@ -6,93 +6,75 @@
     <title>ClearCraft - Digital Marketing Solutions</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/clearcraft-logo.png">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Draggable.min.js"></script>
+
 
 </head>
 <body>
     <!-- Navigation -->
-    <!-- <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <img src="images/clearcraft-logo.png" alt="ClearCraft Logo" class="logo-img">
-                <span class="logo-text">ClearCraft</span>
+
+    <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top py-3">
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#Hero">
+            <img src="images/clearcraft-logo.png" alt="ClearCraft Logo" class="logo-img me-2" width="40">
+            <span class="logo-text fw-bold"> ClearCraft </span>
+            </a>
+
+            <!-- Hamburger -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav Links -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav align-items-lg-center">
+                <li class="nav-item">
+                <a class="nav-link" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#programs">Programs</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#process">Process</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#work">Work</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                <button class="btn btn-gradient fw-bold" onclick="openWhatsApp()">Get Free Consultation</button>
+                </li>
+            </ul>
             </div>
 
-            
-            <div class="nav-links">
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#programs" class="nav-link">Programs</a>
-                <a href="#work" class="nav-link">Work</a>
-                <a href="#process" class="nav-link">Process</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            
-            <button class="cta-button">Get Free Consultation</button>
-        </div>
-    </nav> -->
-
-
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-            <img src="images/clearcraft-logo.png" alt="ClearCraft Logo" class="logo-img">
-            <span class="logo-text">ClearCraft</span>
-        </div>
-
-        <!-- Hamburger Toggle (only visible on mobile) -->
-        <button class="mobile-menu-toggle" id="mobileMenuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <!-- Desktop Nav Links + CTA -->
-        <div class="nav-links" id="navLinks">
-            <a href="#services" class="nav-link">Services</a>
-            <a href="#programs" class="nav-link">Programs</a>
-            <a href="#work" class="nav-link">Work</a>
-            <a href="#process" class="nav-link">Process</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </div>
-        <button class="cta-button">Get Free Consultation</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <!-- <section class="hero-section">
-        <div class="hero-bg-blob blob-1"></div>
-        <div class="hero-bg-blob blob-2"></div>
-        
-        <div class="hero-content">
-           
-            <h1 class="hero-title fade-in-up">
-               Clear Strategy. Smarter Marketing.
-                <span class="gradient-text">Measurable Growth.</span>
-            </h1>
-            
-            <p class="hero-subtitle fade-in-up delay-1">
-                Custom web applications, product development, and digital strategy for founders who need clarity, speed, and results.
-            </p>
-            
-            <div class="hero-buttons fade-in-up delay-2">
-                <button class="primary-button">Get a Free Consultation</button>
-                <button class="secondary-button">View Our Work</button>
-            </div>
-            
-            <div class="hero-trust fade-in-up delay-3">
-                <p class="trust-text">Trusted by Founders & Growing Teams</p>
-                <div class="logo-grid">
-                    <div class="client-logo"></div>
-                    <div class="client-logo"></div>
-                    <div class="client-logo"></div>
-                    <div class="client-logo"></div>
-                </div>
-            </div>
-        </div>
-    </section> -->
+
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section id="Hero" class="hero-section">
         <div class="hero-bg-blob blob-1"></div>
         <div class="hero-bg-blob blob-2"></div>
         
@@ -132,365 +114,220 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">What We Do</h2>
-                <p class="section-subtitle">
-                    We focus on what matters: building products that work and businesses that grow.
-                </p>
+    <!-- Services Section-->
+
+    <section id="services" class="cc-services py-5">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">ClearCraft – Services We Provide</h2>
+      <p class="text-muted">Advanced digital services crafted to grow modern businesses.</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="cc-flip-card">
+          <div class="cc-flip-inner">
+            <div class="cc-flip-front">
+              <div class="icon">🌐</div>
+              <h4>Web Design & Development</h4>
+              <p>Scalable, conversion-focused websites</p>
             </div>
-            
-            <div class="services-grid">
-                <div class="service-card" data-color="blue">
-                    <div class="service-gradient"></div>
-                    <div class="service-icon">🚀</div>
-                    <h3 class="service-title">Product Development</h3>
-                    <p class="service-description">
-                        Go from idea to launch with a product users actually want to use.
-                    </p>
-                    <div class="service-decoration"></div>
-                </div>
-                
-                <div class="service-card" data-color="purple">
-                    <div class="service-gradient"></div>
-                    <div class="service-icon">💻</div>
-                    <h3 class="service-title">Web Applications</h3>
-                    <p class="service-description">
-                        Custom software that scales with your business and solves real problems.
-                    </p>
-                    <div class="service-decoration"></div>
-                </div>
-                
-                <div class="service-card" data-color="orange">
-                    <div class="service-gradient"></div>
-                    <div class="service-icon">🎯</div>
-                    <h3 class="service-title">Digital Strategy</h3>
-                    <p class="service-description">
-                        Clear roadmaps that align your product vision with business goals.
-                    </p>
-                    <div class="service-decoration"></div>
-                </div>
-                
-                <div class="service-card" data-color="green">
-                    <div class="service-gradient"></div>
-                    <div class="service-icon">✨</div>
-                    <h3 class="service-title">UX & Interface Design</h3>
-                    <p class="service-description">
-                        Intuitive experiences that convert visitors into customers.
-                    </p>
-                    <div class="service-decoration"></div>
-                </div>
+            <div class="cc-flip-back">
+              <ul>
+                <li>Business websites</li>
+                <li>Shopify & eCommerce</li>
+                <li>Landing pages</li>
+                <li>Responsive web solutions</li>
+              </ul>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+
+      <!-- 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="cc-flip-card">
+          <div class="cc-flip-inner">
+            <div class="cc-flip-front">
+              <div class="icon">🎨</div>
+              <h4>UI / UX Design</h4>
+              <p>Designs users love</p>
+            </div>
+            <div class="cc-flip-back">
+              <ul>
+                <li>Website & app UI</li>
+                <li>Wireframes & prototypes</li>
+                <li>User flow design</li>
+                <li>Design systems</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="cc-flip-card">
+          <div class="cc-flip-inner">
+            <div class="cc-flip-front">
+              <div class="icon">📢</div>
+              <h4>Digital Marketing</h4>
+              <p>Traffic that converts</p>
+            </div>
+            <div class="cc-flip-back">
+              <ul>
+                <li>Meta Ads</li>
+                <li>Google Ads (basic)</li>
+                <li>Lead generation</li>
+                <li>Local business marketing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="cc-flip-card">
+          <div class="cc-flip-inner">
+            <div class="cc-flip-front">
+              <div class="icon">🧠</div>
+              <h4>Branding & Identity</h4>
+              <p>Build a strong brand presence</p>
+            </div>
+            <div class="cc-flip-back">
+              <ul>
+                <li>Logo design</li>
+                <li>Brand guidelines</li>
+                <li>Visual identity systems</li>
+                <li>Brand positioning</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="cc-flip-card">
+          <div class="cc-flip-inner">
+            <div class="cc-flip-front">
+              <div class="icon">📱</div>
+              <h4>Social Media Management</h4>
+              <p>Consistent & engaging content</p>
+            </div>
+            <div class="cc-flip-back">
+              <ul>
+                <li>Content planning</li>
+                <li>Post design</li>
+                <li>Content calendars</li>
+                <li>Engagement strategy</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="cc-flip-card">
+          <div class="cc-flip-inner">
+            <div class="cc-flip-front">
+              <div class="icon">🔍</div>
+              <h4>SEO (Basic to Intermediate)</h4>
+              <p>Rank higher organically</p>
+            </div>
+            <div class="cc-flip-back">
+              <ul>
+                <li>On-page SEO</li>
+                <li>Structure optimization</li>
+                <li>Keyword research</li>
+                <li>Local SEO setup</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="col-lg-6 col-md-10">
+        <div class="cc-flip-card">
+          <div class="cc-flip-inner">
+            <div class="cc-flip-front">
+              <div class="icon">🚀</div>
+              <h4>Business & Growth Strategy</h4>
+              <p>Build systems that scale</p>
+            </div>
+            <div class="cc-flip-back">
+              <ul>
+                <li>Digital presence planning</li>
+                <li>Funnels & conversion strategy</li>
+                <li>Online system structuring</li>
+                <li>Startup guidance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <!-- Programs Section -->
     <section id="programs" class="programs-section">
         <div class="container">
+
             <div class="section-header">
-                <h2 class="section-title">Training Programs</h2>
-                <p class="section-subtitle">
-                    Transform your career with industry-leading training programs designed for the future of web development.
-                </p>
+            <h2 class="section-title">Our Training Programs</h2>
+            <p class="section-subtitle">
+                Choose a career-focused program designed by industry experts
+            </p>
             </div>
-            
-            <div class="programs-container">
-                <!-- Full Stack Development Course -->
-                <div class="course-card">
-                    <div class="course-gradient"></div>
-                    <div class="course-badge">
-                        <span class="badge-icon">🔥</span>
-                        <span class="badge-text">Most Popular</span>
-                    </div>
-                    
-                    <div class="course-header">
-                        <div class="course-icon-large">💻</div>
-                        <h3 class="course-title">Full Stack Web Development</h3>
-                        <p class="course-tagline">Master Modern Web Development from Frontend to Backend</p>
-                    </div>
-                    
-                    <div class="course-content">
-                        <!-- Course Overview -->
-                        <div class="course-overview">
-                            <p class="overview-text">
-                                Become a professional full-stack developer with our comprehensive training program. Learn to build complete web applications using the latest technologies and industry best practices.
-                            </p>
-                        </div>
-                        
-                        <!-- Course Stats -->
-                        <div class="course-stats">
-                            <div class="stat-item">
-                                <div class="stat-icon">👥</div>
-                                <div class="stat-info">
-                                    <div class="stat-value">Guided Sessions</div>
-                                    <div class="stat-label">SELF-PACED</div>
-                                </div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-icon">📚</div>
-                                <div class="stat-info">
-                                    <div class="stat-value">8 Modules</div>
-                                    <div class="stat-label">Curriculum</div>
-                                </div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-icon">⏱️</div>
-                                <div class="stat-info">
-                                    <div class="stat-value">Structured Content</div>
-                                    <div class="stat-label">FLEXIBLE ACCESS</div>
-                                </div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-icon">🎓</div>
-                                <div class="stat-info">
-                                    <div class="stat-value">Certificate</div>
-                                    <div class="stat-label">On Completion</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- What You'll Learn -->
-                        <div class="course-section">
-                            <h4 class="section-heading">What You'll Learn</h4>
-                            <div class="learning-grid">
-                                <div class="learning-item">
-                                    <span class="check-icon">✓</span>
-                                    <span>HTML5, CSS3 & Modern JavaScript (ES6+)</span>
-                                </div>
-                                <div class="learning-item">
-                                    <span class="check-icon">✓</span>
-                                    <span>React.js & State Management (Redux/Context)</span>
-                                </div>
-                                <div class="learning-item">
-                                    <span class="check-icon">✓</span>
-                                    <span>Node.js & Express.js Backend Development</span>
-                                </div>
-                                <div class="learning-item">
-                                    <span class="check-icon">✓</span>
-                                    <span>Database Design (MongoDB & PostgreSQL)</span>
-                                </div>
-                                <div class="learning-item">
-                                    <span class="check-icon">✓</span>
-                                    <span>RESTful APIs & GraphQL</span>
-                                </div>
-                                <div class="learning-item">
-                                    <span class="check-icon">✓</span>
-                                    <span>Authentication & Security Best Practices</span>
-                                </div>
-                                <div class="learning-item">
-                                    <span class="check-icon">✓</span>
-                                    <span>Version Control with Git & GitHub</span>
-                                </div>
-                                <div class="learning-item">
-                                    <span class="check-icon">✓</span>
-                                    <span>Deployment & Cloud Services (AWS/Heroku)</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Curriculum Modules
-                        <div class="course-section">
-                            <h4 class="section-heading">Course Curriculum</h4>
-                            <div class="curriculum-list">
-                                <div class="curriculum-item">
-                                    <div class="module-number">01</div>
-                                    <div class="module-content">
-                                        <h5 class="module-title">Web Development Fundamentals</h5>
-                                        <p class="module-description">HTML5, CSS3, Responsive Design, Flexbox & Grid</p>
-                                    </div>
-                                </div>
-                                <div class="curriculum-item">
-                                    <div class="module-number">02</div>
-                                    <div class="module-content">
-                                        <h5 class="module-title">JavaScript Mastery</h5>
-                                        <p class="module-description">ES6+, DOM Manipulation, Async Programming, APIs</p>
-                                    </div>
-                                </div>
-                                <div class="curriculum-item">
-                                    <div class="module-number">03</div>
-                                    <div class="module-content">
-                                        <h5 class="module-title">React.js Development</h5>
-                                        <p class="module-description">Components, Hooks, State Management, Routing</p>
-                                    </div>
-                                </div>
-                                <div class="curriculum-item">
-                                    <div class="module-number">04</div>
-                                    <div class="module-content">
-                                        <h5 class="module-title">Backend with Node.js</h5>
-                                        <p class="module-description">Express.js, Middleware, Authentication, APIs</p>
-                                    </div>
-                                </div>
-                                <div class="curriculum-item">
-                                    <div class="module-number">05</div>
-                                    <div class="module-content">
-                                        <h5 class="module-title">Database Management</h5>
-                                        <p class="module-description">MongoDB, PostgreSQL, ORM, Data Modeling</p>
-                                    </div>
-                                </div>
-                                <div class="curriculum-item">
-                                    <div class="module-number">06</div>
-                                    <div class="module-content">
-                                        <h5 class="module-title">Full Stack Projects</h5>
-                                        <p class="module-description">Real-world Applications, Deployment, Portfolio Building</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
+
+            <div class="programs-grid">
+
+            <!-- Full Stack -->
+            <a href="fullstack.html" class="program-card">
+                <div class="program-icon">💻</div>
+                <h3 class="program-title">Full Stack Web Development</h3>
+                <p class="program-desc">
+                Frontend • Backend • Databases • Deployment
+                </p>
+                <span class="program-cta">View Program →</span>
+            </a>
+
+            <!-- Data Science -->
+            <a href="datascience.html" class="program-card">
+                <div class="program-icon">📊</div>
+                <h3 class="program-title">Data Science</h3>
+                <p class="program-desc">
+                Python • ML • AI • Analytics
+                </p>
+                <span class="program-cta">View Program →</span>
+            </a>
+
+            </div>
+            <div>
+                <div>
+                    <h1>
 
 
-                        <!-- Curriculum Modules -->
-                        <div class="course-section">
-                            <h4 class="section-heading">Course Curriculum</h4>
-
-                            <div class="curriculum-list">
-
-                                <!-- Module 01 -->
-                                <div class="curriculum-item">
-                                    <div class="module-number">01</div>
-                                    <div class="module-content">
-                                        <h5 class="module-title">JavaScript Fundamentals</h5>
-                                        <p class="module-description">
-                                            Introduction, JavaScript Basics, Variables, Syntax, Core Concepts
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <!-- Module 02 -->
-                                <div class="curriculum-item">
-                                    <div class="module-number">02</div>
-                                    <div class="module-content">
-                                        <h5 class="module-title">HTML & CSS</h5>
-                                        <p class="module-description">
-                                            HTML Structure, CSS Styling, Layouts, Responsive Design, Live Practice
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <!-- Module 03 -->
-                                <div class="curriculum-item">
-                                    <div class="module-number">03</div>
-                                    <div class="module-content">
-                                        <h5 class="module-title">Tailwind CSS</h5>
-                                        <p class="module-description">
-                                            Utility Classes, Layout Design, Responsive UI, Tailwind Best Practices
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <!-- Module 04 -->
-                                <div class="curriculum-item">
-                                    <div class="module-number">04</div>
-                                    <div class="module-content">
-                                        <h5 class="module-title">Advanced JavaScript</h5>
-                                        <p class="module-description">
-                                            DOM Fundamentals, Events, ES5 vs ES6, Fetch API, Error Handling, Live Practice
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <!-- Module 05 -->
-                                <div class="curriculum-item">
-                                    <div class="module-number">05</div>
-                                    <div class="module-content">
-                                        <h5 class="module-title">React JS</h5>
-                                        <p class="module-description">
-                                            React Fundamentals, Hooks, Routing, State Management, React Project
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <!-- Module 06 -->
-                                <div class="curriculum-item">
-                                    <div class="module-number">06</div>
-                                    <div class="module-content">
-                                        <h5 class="module-title">MySQL Database</h5>
-                                        <p class="module-description">
-                                            MySQL Basics, Queries, Database Design
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <!-- Module 07 -->
-                                <div class="curriculum-item">
-                                    <div class="module-number">07</div>
-                                    <div class="module-content">
-                                        <h5 class="module-title">MongoDB</h5>
-                                        <p class="module-description">
-                                            NoSQL Concepts, MongoDB Basics, Collections & Documents
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <!-- Module 08 -->
-                                <div class="curriculum-item">
-                                    <div class="module-number">08</div>
-                                    <div class="module-content">
-                                        <h5 class="module-title">Node.js & Backend Development</h5>
-                                        <p class="module-description">
-                                            Node.js Fundamentals, Express, APIs, MVC Architecture, JWT, Live Practice
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        
 
 
-                        <!-- Program Features -->
-                        <div class="course-section">
-                            <h4 class="section-heading">Program Features</h4>
-                            <div class="features-grid">
-                                <div class="feature-card">
-                                    <div class="feature-icon blue-gradient">🎯</div>
-                                    <h5 class="feature-title">Project-Based Learning</h5>
-                                    <p class="feature-description">Build 10+ real-world projects for your portfolio</p>
-                                </div>
-                                <div class="feature-card">
-                                    <div class="feature-icon purple-gradient">👨‍💻</div>
-                                    <h5 class="feature-title">Expert Mentorship</h5>
-                                    <p class="feature-description">Learn from industry professionals with 10+ years experience</p>
-                                </div>
-                                <div class="feature-card">
-                                    <div class="feature-icon orange-gradient">💼</div>
-                                    <h5 class="feature-title">Career Support</h5>
-                                    <p class="feature-description">Resume building, interview prep, and job placement assistance</p>
-                                </div>
-                                <div class="feature-card">
-                                    <div class="feature-icon green-gradient">🔄</div>
-                                    <h5 class="feature-title">Lifetime Access</h5>
-                                    <p class="feature-description">Access course materials and updates forever</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Pricing & CTA -->
-                        <div class="course-footer">
-                            <div class="pricing-section">
-                                
-                                <div class="price-features">
-                                    <div class="price-feature">✓ 6-month comprehensive training</div>
-                                    <div class="price-feature">✓ Live sessions & recordings</div>
-                                    <div class="price-feature">✓ Industry certification</div>
-                                    <div class="price-feature">✓ Job placement assistance</div>
-                                </div>
-                            </div>
-                            <div class="course-cta">
-                                <button class="enroll-button">
-                                    Enroll Now
-                                </button>
-                                <button class="download-button">
-                                    Download Syllabus
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+
+
+
+                    </h1>
+
+
                 </div>
-                
-                <!-- Coming Soon Card -->
+            </div>
+
+            <!-- Coming Soon Card -->
                 <div class="coming-soon-card">
                     <div class="coming-soon-content">
                         <div class="coming-soon-icon">🚀</div>
@@ -498,14 +335,17 @@
                         <p class="coming-soon-text">
                             We're launching new training programs in Mobile Development, DevOps, Cloud Computing, and more!
                         </p>
-                        <button class="notify-button">
-                            Get Notified
-                        </button>
                     </div>
                 </div>
-            </div>
+
+
         </div>
+
+        
     </section>
+
+                
+               
 
     <!-- Why ClearCraft Section -->
     <section class="why-section">
@@ -629,298 +469,148 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="work" class="portfolio-section">
+
+    <section id="work" class="our-work-section">
+  <div class="container text-center mb-5">
+    <h2 class="fw-bold display-6">Projects Worked On</h2>
+    <p class="text-muted">Practical solutions delivered with clarity and purpose</p>
+  </div>
+
+  <div class="carousel-wrapper">
+    <div class="carousel-track">
+
+      <!-- CARD 1 -->
+      <div class="carousel-card card-primary">
+        <h4>JomaStudio – Shopify Store Website Design</h4>
+        <span class="badge bg-primary">eCommerce | Shopify</span>
+        <ul>
+          <li>Designed and built a Shopify-based clothing store</li>
+          <li>Structured product pages and collections</li>
+          <li>Set up homepage layout focused on brand clarity</li>
+          <li>Optimized store for mobile users</li>
+        </ul>
+        <p><strong>Outcome:</strong> A clean and functional eCommerce website ready for product launches and marketing.</p>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="carousel-card card-success">
+        <h4>LearnX – Platform Content & System Design</h4>
+        <span class="badge bg-success">Strategy | System Design</span>
+        <ul>
+          <li>Designed content structure for courses and learning paths</li>
+          <li>Planned user journey from onboarding to engagement</li>
+          <li>Aligned business goals with platform structure</li>
+        </ul>
+        <p><strong>Outcome:</strong> Well-organized platform structure focused on long-term scalability.</p>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="carousel-card card-warning">
+        <h4>Digital Marketing Website for Local Business</h4>
+        <span class="badge bg-warning text-dark">Web Design | Digital Presence</span>
+        <ul>
+          <li>Designed a business website layout</li>
+          <li>Structured service pages for clarity</li>
+          <li>Planned local lead capture flow</li>
+        </ul>
+        <p><strong>Outcome:</strong> Improved digital presence concept for offline businesses.</p>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="carousel-card card-danger">
+        <h4>Lead Generation Landing Page</h4>
+        <span class="badge bg-danger">Landing Page | Conversion Design</span>
+        <ul>
+          <li>Designed a high-conversion landing page</li>
+          <li>Structured CTA and contact flow</li>
+          <li>Optimized layout for ads traffic</li>
+        </ul>
+        <p><strong>Outcome:</strong> Clear lead capture system suitable for paid ads.</p>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="carousel-card card-info">
+        <h4>Social Media Marketing Strategy</h4>
+        <span class="badge bg-info text-dark">Digital Marketing | Strategy</span>
+        <ul>
+          <li>Planned 30-day content strategy</li>
+          <li>Designed ad messaging framework</li>
+          <li>Defined audience targeting approach</li>
+        </ul>
+        <p><strong>Outcome:</strong> Consistent and structured social media growth plan.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!--Testimonials Section-->
+
+
+    <section class="cc-testimonials">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Work</h2>
-                <p class="section-subtitle">
-                    Real projects, real results. Here's how we've helped businesses grow.
-                </p>
+
+            <div class="cc-testimonial-header">
+            <h2>Testimonials</h2>
+            <p>What clients say about working with ClearCraft</p>
             </div>
-            
-            <div class="portfolio-grid">
-                <div class="project-card">
-                    <div class="project-gradient blue"></div>
-                    <div class="project-visual blue-bg">
-                        <img src="https://images.unsplash.com/photo-1759752394755-1241472b589d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjBzY3JlZW58ZW58MXx8fHwxNzY2OTg2NTE5fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="FinTech Dashboard Project" class="project-image">
-                    </div>
-                    
-                    <h3 class="project-title">FinTech Dashboard Redesign</h3>
-                    
-                    <div class="project-details">
-                        <div class="detail-box">
-                            <h4 class="detail-label"><span class="icon-red">⚠️</span> Problem</h4>
-                            <p class="detail-text">
-                                Complex financial data was overwhelming users and causing high drop-off rates.
-                            </p>
-                        </div>
-                        
-                        <div class="detail-box">
-                            <h4 class="detail-label"><span class="icon-blue">🔧</span> What We Did</h4>
-                            <p class="detail-text">
-                                Redesigned the dashboard with clear data visualization and simplified workflows.
-                            </p>
-                        </div>
-                        
-                        <div class="detail-box">
-                            <h4 class="detail-label"><span class="icon-green">📈</span> Outcome</h4>
-                            <p class="detail-text outcome-text">
-                                45% increase in daily active users, 60% reduction in support tickets.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-gradient purple"></div>
-                    <div class="project-visual purple-bg">
-                        <img src="https://images.unsplash.com/photo-1658297063569-162817482fb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlJTIwc2hvcHBpbmd8ZW58MXx8fHwxNzY2OTI3MjI0fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="E-Commerce Platform" class="project-image">
-                    </div>
-                    
-                    <h3 class="project-title">E-Commerce Platform Build</h3>
-                    
-                    <div class="project-details">
-                        <div class="detail-box">
-                            <h4 class="detail-label"><span class="icon-red">⚠️</span> Problem</h4>
-                            <p class="detail-text">
-                                Growing brand needed custom checkout flow for subscription products.
-                            </p>
-                        </div>
-                        
-                        <div class="detail-box">
-                            <h4 class="detail-label"><span class="icon-blue">🔧</span> What We Did</h4>
-                            <p class="detail-text">
-                                Built a custom headless commerce solution with flexible subscription options.
-                            </p>
-                        </div>
-                        
-                        <div class="detail-box">
-                            <h4 class="detail-label"><span class="icon-green">📈</span> Outcome</h4>
-                            <p class="detail-text outcome-text">
-                                Launched in 8 weeks. 3x increase in subscription conversion rate.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-gradient orange"></div>
-                    <div class="project-visual orange-bg">
-                        <img src="https://images.unsplash.com/photo-1637937459053-c788742455be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXZlbG9wbWVudCUyMGNvZGluZyUyMHNjcmVlbnxlbnwxfHx8fDE3NjY5ODkxOTJ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="SaaS MVP Development" class="project-image">
-                    </div>
-                    
-                    <h3 class="project-title">SaaS Product MVP</h3>
-                    
-                    <div class="project-details">
-                        <div class="detail-box">
-                            <h4 class="detail-label"><span class="icon-red">⚠️</span> Problem</h4>
-                            <p class="detail-text">
-                                Startup needed to validate their idea before raising investment.
-                            </p>
-                        </div>
-                        
-                        <div class="detail-box">
-                            <h4 class="detail-label"><span class="icon-blue">🔧</span> What We Did</h4>
-                            <p class="detail-text">
-                                Developed a focused MVP with core features and user feedback loops.
-                            </p>
-                        </div>
-                        
-                        <div class="detail-box">
-                            <h4 class="detail-label"><span class="icon-green">📈</span> Outcome</h4>
-                            <p class="detail-text outcome-text">
-                                Secured $2M seed funding. 500+ early adopters in first month.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+
+            <div class="cc-testimonial-flex">
+
+            <div class="cc-testimonial-card accent-blue">
+                <span class="cc-badge">Results</span>
+                <h4>Result-Focused</h4>
+                <p>ClearCraft helped us organize our ideas properly.</p>
+                <p>They didn’t rush the work and took time to understand our needs.</p>
+                <p>The final output was clean and practical.</p>
+                <p>Communication was clear throughout the project.</p>
+                <p class="cc-muted">Overall, the experience was satisfying.</p>
+            </div>
+
+            <div class="cc-testimonial-card accent-purple">
+                <span class="cc-badge">Process</span>
+                <h4>Process-Focused</h4>
+                <p>The team at ClearCraft followed a structured process.</p>
+                <p>They explained things in a way that was easy to understand.</p>
+                <p>We liked their clarity in timelines and delivery.</p>
+                <p>The work was consistent and professional.</p>
+                <p class="cc-muted">Good experience working with them.</p>
+            </div>
+
+            <div class="cc-testimonial-card accent-green">
+                <span class="cc-badge">Support</span>
+                <h4>Support-Focused</h4>
+                <p>ClearCraft was supportive throughout the project.</p>
+                <p>They were open to feedback and made changes when needed.</p>
+                <p>The approach was simple and effective.</p>
+                <p>They maintained good coordination during execution.</p>
+                <p class="cc-muted">A reliable team to collaborate with.</p>
+            </div>
+
+            <div class="cc-testimonial-card accent-orange">
+                <span class="cc-badge">Expectations</span>
+                <h4>Expectation-Based</h4>
+                <p>Our expectations were met without unnecessary complexity.</p>
+                <p>ClearCraft focused more on functionality than just visuals.</p>
+                <p>The workflow was smooth from start to finish.</p>
+                <p>They maintained professionalism in all interactions.</p>
+                <p class="cc-muted">We are comfortable recommending their services.</p>
+            </div>
+
+            <div class="cc-testimonial-card accent-teal">
+                <span class="cc-badge">Trust</span>
+                <h4>Trust & Reliability</h4>
+                <p>ClearCraft handled the project responsibly.</p>
+                <p>They kept us informed at every stage.</p>
+                <p>The quality of work was steady and dependable.</p>
+                <p>Deadlines were managed properly.</p>
+                <p class="cc-muted">A trustworthy agency to work with.</p>
+            </div>
+
             </div>
         </div>
     </section>
-
-    <!--Testimonials Section-->
-    <section class="testimonials-section">
-        <div class="testimonials-bg-blob"></div>
-        
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">What Clients Say</h2>
-                <p class="section-subtitle">
-                    Don't just take our word for it.
-                </p>
-            </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-accent blue"></div>
-                    <div class="stars">
-                        <span class="star">⭐</span>
-                        <span class="star">⭐</span>
-                        <span class="star">⭐</span>
-                        <span class="star">⭐</span>
-                        <span class="star">⭐</span>
-                    </div>
-                    <div class="quote-container">
-                        <span class="quote-mark">"</span>
-                        <p class="quote-text">
-                            ClearCraft turned our vague idea into a working product in just 6 weeks. Their clarity and execution are unmatched.
-                        </p>
-                    </div>
-                    <div class="testimonial-divider"></div>
-                    <div class="author-info">
-                        <div class="author-avatar blue-gradient">S</div>
-                        <div class="author-details">
-                            <p class="author-name">Sarah Chen</p>
-                            <p class="author-role">Founder, DataFlow</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-accent purple"></div>
-                    <div class="stars">
-                        <span class="star">⭐</span>
-                        <span class="star">⭐</span>
-                        <span class="star">⭐</span>
-                        <span class="star">⭐</span>
-                        <span class="star">⭐</span>
-                    </div>
-                    <div class="quote-container">
-                        <span class="quote-mark">"</span>
-                        <p class="quote-text">
-                            Finally, a team that speaks business, not just code. They understood our goals and delivered exactly what we needed.
-                        </p>
-                    </div>
-                    <div class="testimonial-divider"></div>
-                    <div class="author-info">
-                        <div class="author-avatar purple-gradient">M</div>
-                        <div class="author-details">
-                            <p class="author-name">Michael Rodriguez</p>
-                            <p class="author-role">CEO, GrowthStack</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-accent orange"></div>
-                    <div class="stars">
-                        <span class="star">⭐</span>
-                        <span class="star">⭐</span>
-                        <span class="star">⭐</span>
-                        <span class="star">⭐</span>
-                        <span class="star">⭐</span>
-                    </div>
-                    <div class="quote-container">
-                        <span class="quote-mark">"</span>
-                        <p class="quote-text">
-                            The transparent communication and fast turnaround made this the smoothest development project we've ever done.
-                        </p>
-                    </div>
-                    <div class="testimonial-divider"></div>
-                    <div class="author-info">
-                        <div class="author-avatar orange-gradient">E</div>
-                        <div class="author-details">
-                            <p class="author-name">Emily Thompson</p>
-                            <p class="author-role">Product Lead, Nexus Labs</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> 
-
-    
-    <!-- Testimonials Section
-    <section class="testimonials-section">
-        <div class="testimonials-bg-blob"></div>
-        
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Client Reviews</span>
-                <h2 class="section-title">What Our Clients Say</h2>
-                <p class="section-subtitle">
-                    Don't just take our word for it—hear from the founders we've partnered with.
-                </p>
-            </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-accent blue"></div>
-                    <div class="stars">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <div class="quote-container">
-                        <span class="quote-mark">"</span>
-                        <p class="quote-text">
-                            ClearCraft took our messy idea and turned it into a polished product in just 6 weeks. Their team understood our vision immediately and delivered beyond expectations. The communication was flawless throughout.
-                        </p>
-                    </div>
-                    <div class="testimonial-divider"></div>
-                    <div class="author-info">
-                        <img src="https://images.unsplash.com/photo-1765438869321-d60141efd813?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdGFydHVwJTIwZm91bmRlciUyMHBvcnRyYWl0fGVufDF8fHx8MTc2Njk2Mjk1Mnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Client" class="author-avatar-img">
-                        <div class="author-details">
-                            <p class="author-name">Sarah Chen</p>
-                            <p class="author-role">Founder & CEO, DataFlow Analytics</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-accent purple"></div>
-                    <div class="stars">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <div class="quote-container">
-                        <span class="quote-mark">"</span>
-                        <p class="quote-text">
-                            The Full-Stack bootcamp completely changed my career. I went from zero coding knowledge to landing a $95K developer job in 7 months. The mentorship and real-world projects made all the difference.
-                        </p>
-                    </div>
-                    <div class="testimonial-divider"></div>
-                    <div class="author-info">
-                        <div class="author-avatar purple-gradient">MR</div>
-                        <div class="author-details">
-                            <p class="author-name">Michael Rodriguez</p>
-                            <p class="author-role">Software Engineer, Tech Startup</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-accent orange"></div>
-                    <div class="stars">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <div class="quote-container">
-                        <span class="quote-mark">"</span>
-                        <p class="quote-text">
-                            Working with ClearCraft felt like having an in-house development team without the overhead. They became true partners in our growth, not just contractors. Best investment we've made.
-                        </p>
-                    </div>
-                    <div class="testimonial-divider"></div>
-                    <div class="author-info">
-                        <div class="author-avatar orange-gradient">ET</div>
-                        <div class="author-details">
-                            <p class="author-name">Emily Thompson</p>
-                            <p class="author-role">VP Product, Nexus Commerce</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <!-- Final CTA Section -->
     <section id="contact" class="cta-section">
@@ -933,13 +623,8 @@
             <p class="cta-text">
                 Book a free 30-minute consultation. No pressure, no sales pitch—just an honest conversation about your goals.
             </p>
-            <!-- <button class="cta-main-button">
-                <span class="button-text">Book a Free Call</span>
-                <span class="button-hover-text">Let's Talk! 💬</span>
-                <div class="button-gradient"></div>
-            </button>  -->
-
-            <button class="cta-main-button" type="button" onclick="openGmail()">
+           
+            <button class="cta-main-button" type="button" onclick="openWhatsApp()">
                 <span class="button-text">Book a Free Call</span>
                 <span class="button-hover-text">Let's Talk! 💬</span>
                 <div class="button-gradient"></div>
@@ -986,29 +671,26 @@
                 <div class="footer-column">
                     <h3 class="footer-heading">Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#services"><span>→</span> Product Development</a></li>
+                        <li><a href="#services"><span>→</span> Social Media Management</a></li>
                         <li><a href="#services"><span>→</span> Web Applications</a></li>
                         <li><a href="#services"><span>→</span> Digital Strategy</a></li>
-                        <li><a href="#services"><span>→</span> UX & Design</a></li>
+                        <li><a href="#services"><span>→</span> UI/UX Design</a></li>
+                        <li><a href="#services"><span>→</span> Branding & Identity</a></li>
+                        <li><a href="#services"><span>→</span> SEO </a></li>
+                        <li><a href="#services"><span>→</span> Business & Growth Strategy</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <!-- <h3 class="footer-heading">Contact</h3>
-                    <ul class="footer-links">
-                        <li><a href="mailto: joshwabj005@gmail.com"><span>📧</span> joshwabj005@gmail.com</a></li>
-                        <li><a href="#contact"><span>📞</span> Book a Call</a></li>
-                    </ul> -->
-
                     <h3 class="footer-heading">Contact</h3>
                     <ul class="footer-links">
                         <li>
                             <a href="javascript:void(0)" onclick="openGmail()">
-                                <span>📧</span> joshwabj005@gmail.com
+                                <span>📧</span> offjoshwab@gmail.com
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)" onclick="openGmail()">
+                            <a href="javascript:void(0)" onclick="openWhatsApp()">
                                 <span>📞</span> Book a Call
                             </a>
                         </li>
@@ -1017,35 +699,66 @@
                 
 
                     <h4 class="social-heading">Follow Us</h4>
-                    <!-- <div class="social-links">
-                        <a href="#" class="social-icon linkedin" title="LinkedIn">💼</a>
-                        <a href="#" class="social-icon twitter" title="Twitter">🐦</a>
-                        <a href="#" class="social-icon github" title="GitHub">💻</a>
-                        <a href="#" class="social-icon dribbble" title="Dribbble">🎨</a>
-                    </div> -->
+                   
 
                     <div class="social-links">
-                        <a href="#" class="social-icon linkedin" title="LinkedIn">
+
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/clear.craft_agency?igsh=NDg3eDEzcGw4aTcy" target="_blank"
+                            class="social-icon instagram" title="Instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm8.5 1.5h-8.5C5.28 3.5 3.5 5.28 3.5 7.75v8.5c0 2.47 1.78 4.25 4.25 4.25h8.5c2.47 0 4.25-1.78 4.25-4.25v-8.5c0-2.47-1.78-4.25-4.25-4.25z"/>
+                            <path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 1.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7z"/>
+                            <circle cx="17.5" cy="6.5" r="1"/>
                             </svg>
                         </a>
-                        <a href="#" class="social-icon twitter" title="Twitter">
+
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/" target="_blank"
+                            class="social-icon facebook" title="Facebook">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.325v21.351C0 23.403.597 24 1.325 24h11.495v-9.294H9.691V11.01h3.129V8.309c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.313h3.587l-.467 3.696h-3.12V24h6.116C23.403 24 24 23.403 24 22.676V1.325C24 .597 23.403 0 22.675 0z"/>
                             </svg>
                         </a>
-                        <a href="#" class="social-icon github" title="GitHub">
+
+                        <!-- YouTube -->
+                        <a href="https://www.youtube.com/" target="_blank"
+                        class="social-icon youtube" title="YouTube">
+
+                        <svg width="22" height="22" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+
+                            <!-- Red YouTube rounded rectangle -->
+                            <path
+                            fill="#FF0000"
+                            d="M23.5 6.5s-.2-1.7-.8-2.4c-.8-.9-1.7-.9-2.1-1
+                                C17.8 2.8 12 2.8 12 2.8h0s-5.8 0-8.6.3
+                                c-.4.1-1.3.1-2.1 1C.7 4.8.5 6.5.5 6.5
+                                S0 8.4 0 10.3v1.4c0 1.9.5 3.8.5 3.8
+                                s.2 1.7.8 2.4c.8.9 1.9.9 2.4 1
+                                1.7.2 7.3.3 8.3.3 0 0 5.8 0 8.6-.3
+                                .4-.1 1.3-.1 2.1-1 .6-.7.8-2.4.8-2.4
+                                s.5-1.9.5-3.8v-1.4c0-1.9-.5-3.8-.5-3.8z"/>
+
+                            <!-- White play triangle -->
+                            <path
+                            fill="#FFFFFF"
+                            d="M9.5 8.3v7.4L15.8 12l-6.3-3.7z"/>
+
+                        </svg>
+
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/company/clearcraft/" target="_blank"
+                            class="social-icon linkedin" title="LinkedIn">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                             </svg>
                         </a>
-                        <a href="#" class="social-icon dribbble" title="Dribbble">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                                <path d="M12 0c-6.628 0-12 5.373-12 12s5.372 12 12 12 12-5.373 12-12-5.372-12-12-12zm9.885 11.441c-2.575-.422-4.943-.445-7.103-.073-.244-.563-.497-1.125-.767-1.68 2.31-1 4.165-2.358 5.548-4.082 1.35 1.594 2.197 3.619 2.322 5.835zm-3.842-7.282c-1.205 1.554-2.868 2.783-4.986 3.68-1.016-1.861-2.178-3.676-3.488-5.438.779-.197 1.591-.314 2.431-.314 2.275 0 4.368.779 6.043 2.072zm-10.516-.993c1.331 1.742 2.511 3.538 3.537 5.381-2.43.715-5.331 1.082-8.684 1.105.692-2.835 2.601-5.193 5.147-6.486zm-5.44 8.834l.013-.256c3.849-.005 7.169-.448 9.95-1.322.233.475.456.952.67 1.432-3.38 1.057-6.165 3.222-8.337 6.48-1.432-1.719-2.296-3.927-2.296-6.334zm3.829 7.81c1.969-3.088 4.482-5.098 7.598-6.027.928 2.42 1.609 4.91 2.043 7.46-3.349 1.291-7.21.707-9.641-1.433zm11.586.43c-.438-2.353-1.08-4.653-1.92-6.897 1.876-.265 3.94-.196 6.199.196-.437 2.786-2.028 5.192-4.279 6.701z"/>
-                            </svg>
-                        </a>
+
                     </div>
+
                 </div>
             </div>
             

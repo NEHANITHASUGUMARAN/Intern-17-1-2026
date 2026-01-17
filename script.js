@@ -8,6 +8,42 @@ window.addEventListener('scroll', () => {
     }
 });
 
+
+// Smooth Scroll for Nav Links
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+    const offset = 70; // adjust according to navbar height
+    const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+
+    window.scrollTo({
+      top: elementPosition,
+      behavior: "smooth"
+    });
+
+    // Close mobile menu if open
+    const navbarCollapse = document.getElementById('navbarNav');
+    if (navbarCollapse.classList.contains('show')) {
+      new bootstrap.Collapse(navbarCollapse).toggle();
+    }
+  });
+});
+
+// CTA Button Scroll
+function scrollToContact() {
+  const contactSection = document.getElementById('contact');
+  const offset = 70;
+  const elementPosition = contactSection.getBoundingClientRect().top + window.scrollY - offset;
+
+  window.scrollTo({
+    top: elementPosition,
+    behavior: 'smooth'
+  });
+}
+
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -77,19 +113,6 @@ document.querySelectorAll('.service-card').forEach(card => {
     });
 });
 
-// // Add click handlers for CTA buttons
-// document.querySelectorAll('.cta-button, .primary-button, .secondary-button, .cta-main-button').forEach(button => {
-//     button.addEventListener('click', () => {
-//         // Add click animation
-//         button.style.transform = 'scale(0.95)';
-//         setTimeout(() => {
-//             button.style.transform = '';
-//         }, 100);
-        
-//         // Show alert (replace with your actual form/modal logic)
-//         alert('Thank you for your interest! In a real implementation, this would open a consultation booking form.');
-//     });
-// });
 
 // Add click handlers for CTA buttons
 document.querySelectorAll('.cta-button, .primary-button, .secondary-button, .cta-main-button')
@@ -102,10 +125,9 @@ document.querySelectorAll('.cta-button, .primary-button, .secondary-button, .cta
             button.style.transform = '';
         }, 100);
 
-        // 👉 If Book a Free Call button
+        // 👉 If Book a Free Call button → WhatsApp
         if (button.classList.contains('cta-main-button')) {
-            window.location.href =
-                'mailto:joshwabj005@gmail.com?subject=Free%20Call%20Request&body=Hi,%20I%20would%20like%20to%20book%20a%20free%20call.';
+            openWhatsApp();
             return;
         }
 
@@ -115,24 +137,17 @@ document.querySelectorAll('.cta-button, .primary-button, .secondary-button, .cta
 });
 
 
+// 🔹 WhatsApp redirect function
+function openWhatsApp() {
+    const phoneNumber = "916379192594"; // Country code + number (no +)
+    const message =
+        "Hi, I would like to book a *free consultation* with ClearCraft. Please let me know the next steps.";
 
-function openGmail() {
-    const email = "joshwabj005@gmail.com";
-    const subject = "Free Call Request";
-    const body = "Hi, I would like to book a free call.";
+    const whatsappURL =
+        "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
 
-    const gmailURL =
-        "https://mail.google.com/mail/?view=cm&fs=1" +
-        "&to=" + encodeURIComponent(email) +
-        "&su=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(body);
-
-    window.open(gmailURL, "_blank");
+    window.open(whatsappURL, "_blank");
 }
-
-
-
-
 
 
 // Add click handlers for program buttons
@@ -396,7 +411,7 @@ function debounce(func, wait) {
 
 
 function openGmail() {
-    const email = "joshwabj005@gmail.com";
+    const email = "offjoshwab@gmail.com";
     const subject = "Free Call Request";
     const body = "Hi, I would like to book a free call.";
 
@@ -408,6 +423,64 @@ function openGmail() {
 
     window.open(gmailURL, "_blank");
 }
+
+
+
+// Duplicate carousel items for infinite scroll effect
+const track = document.querySelector('.carousel-track');
+let cards = Array.from(track.children);
+
+// Duplicate for infinite scroll
+track.innerHTML += track.innerHTML;
+cards = Array.from(track.children);
+
+let scrollPos = 0;
+let speed = 0.5;
+let wrapper = document.querySelector('.carousel-wrapper');
+let wrapperWidth = wrapper.offsetWidth;
+let trackWidth = track.scrollWidth / 2;
+
+// Update active center card
+function updateActiveCard() {
+  const center = wrapperWidth / 2;
+  cards.forEach(card => card.classList.remove('active'));
+
+  let closest = cards[0];
+  let closestDistance = Infinity;
+
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    const cardCenter = rect.left + rect.width / 2;
+    const distance = Math.abs(center - cardCenter);
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      closest = card;
+    }
+  });
+
+  closest.classList.add('active');
+}
+
+// Auto-scroll animation
+function animate() {
+  scrollPos += speed;
+  if(scrollPos >= trackWidth) scrollPos = 0;
+  track.style.transform = `translateX(-${scrollPos}px)`;
+  updateActiveCard();
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+// Pause on hover
+wrapper.addEventListener('mouseenter', () => speed = 0);
+wrapper.addEventListener('mouseleave', () => speed = 0.5);
+
+// Update wrapper width on resize
+window.addEventListener('resize', () => wrapperWidth = wrapper.offsetWidth);
+
+
+
 
 
 
@@ -433,3 +506,5 @@ window.addEventListener('load', () => {
 });
 
 console.log('✅ ClearCraft website loaded successfully!');
+
+

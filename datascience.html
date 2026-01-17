@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Full Stack Web Development Program</title>
+  <link rel="stylesheet" href="fullstack.css">
+
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    }
+
+    body {
+    background: #0f172a;
+    color: #fff;
+    }
+    .back-home {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 18px;
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+    }
+
+    .back-home:hover {
+    background: linear-gradient(135deg, #6366f1, #22d3ee);
+    transform: translateY(-2px);
+    }
+
+
+    /* HERO */
+    .program-hero {
+    padding: 100px 20px;
+    text-align: center;
+    background: radial-gradient(circle at top, #6366f1, #020617);
+    }
+
+    .program-hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    }
+
+    .program-hero p {
+    margin-top: 16px;
+    color: #c7d2fe;
+    font-size: 18px;
+    }
+
+    /* CURRICULUM */
+    .curriculum-section {
+    padding: 80px 20px;
+    }
+
+    .container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    gap: 28px;
+    }
+
+    /* MODULE CARD */
+    .module-card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 28px;
+    transition: 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .module-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.12);
+    }
+
+    /* MODULE HEADER */
+    .module-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 16px;
+    }
+
+    .module-number {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #22d3ee);
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    }
+
+    .module-header h3 {
+    font-size: 22px;
+    }
+
+    /* LESSON LIST */
+    .lesson-list {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    }
+
+    .lesson-list li {
+    padding-left: 24px;
+    position: relative;
+    color: #e5e7eb;
+    }
+
+    .lesson-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #22d3ee;
+    }
+
+    .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    }
+
+    .modal-box {
+    background: #111;
+    padding: 30px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 420px;
+    color: #fff;
+    position: relative;
+    }
+
+    .modal-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    }
+
+    .modal-box button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #6366f1, #22d3ee);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    }
+
+    .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 22px;
+    cursor: pointer;
+    }
+
+
+    /* CTA */
+    .cta-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #6366f1, #22d3ee);
+    }
+
+    .cta-section h2 {
+    font-size: 36px;
+    margin-bottom: 24px;
+    }
+
+    .cta-btn {
+    padding: 16px 40px;
+    border-radius: 999px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #fff;
+    color: #0f172a;
+    transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+    transform: scale(1.05);
+    }
+
+    .enroll-btn {
+    padding: 16px 40px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #6366f1,
+        #22d3ee
+    );
+    background-size: 200%;
+
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+
+    box-shadow:
+        0 0 0 rgba(99,102,241,0.4),
+        0 12px 30px rgba(34,211,238,0.35);
+
+    transition:
+        background-position 0.6s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    /* Hover */
+    .enroll-btn:hover {
+    background-position: 100%;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow:
+        0 18px 45px rgba(34,211,238,0.55),
+        0 0 35px rgba(99,102,241,0.6);
+    }
+
+    /* Click */
+    .enroll-btn:active {
+    transform: scale(0.96);
+    box-shadow:
+        0 8px 20px rgba(34,211,238,0.4);
+    }
+
+    /* Focus (Accessibility) */
+    .enroll-btn:focus-visible {
+    outline: none;
+    box-shadow:
+        0 0 0 4px rgba(99,102,241,0.4),
+        0 16px 40px rgba(34,211,238,0.6);
+    }
+
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+    .program-hero h1 {
+        font-size: 36px;
+    }
+    }
+
+  </style>
+</head>
+<body>
+<a href="index.html" class="back-home">
+  ← Back to Home
+</a>
+<section class="program-hero">
+  <h1>Data Science</h1>
+  <p>Master Python, AI & Ml, Analytics with real-world projects</p>
+</section>
+
+<section class="curriculum-section">
+  <div class="container">
+
+    <!-- MODULE 1 -->
+    <div class="module-card">
+      <div class="module-header">
+        <span class="module-number">01</span>
+        <h3>Python Programming</h3>
+      </div>
+      <ul class="lesson-list">
+        <li>Python Basics</li>
+        <li>Variables & Data Types</li>
+        <li>Control Statements</li>
+        <li>Functions & Modules</li>
+        <li>OOP Concepts</li>
+      </ul>
+    </div>
+
+    <!-- MODULE 2 -->
+    <div class="module-card">
+      <div class="module-header">
+        <span class="module-number">02</span>
+        <h3>Statistics & Probability</h3>
+      </div>
+      <ul class="lesson-list">
+        <li>Descriptive Statistics</li>
+        <li>Probability Theory</li>
+        <li>Distributions</li>
+        <li>Hypothesis Testing</li>
+        <li>Correlation & Regression</li>
+      </ul>
+    </div>
+
+    <!-- MODULE 3 -->
+    <div class="module-card">
+      <div class="module-header">
+        <span class="module-number">03</span>
+        <h3>Data Analysis with Python</h3>
+      </div>
+      <ul class="lesson-list">
+        <li>NumPy Fundamentals</li>
+        <li>Pandas for Data Analysis</li>
+        <li>Data Cleaning</li>
+        <li>Data Transformation</li>
+        <li>Exploratory Data Analysis (EDA)</li>
+      </ul>
+    </div>
+
+    <!-- MODULE 4 -->
+    <div class="module-card">
+      <div class="module-header">
+        <span class="module-number">04</span>
+        <h3>Data Visualization</h3>
+      </div>
+      <ul class="lesson-list">
+        <li>Matplotlib</li>
+        <li>Seaborn</li>
+        <li>Plotly Basics</li>
+        <li>Dashboard Design</li>
+        <li>Storytelling with Data</li>
+      </ul>
+    </div>
+
+    <!-- MODULE 5 -->
+    <div class="module-card">
+      <div class="module-header">
+        <span class="module-number">05</span>
+        <h3>Machine Learning</h3>
+      </div>
+      <ul class="lesson-list">
+        <li>ML Fundamentals</li>
+        <li>Supervised Learning</li>
+        <li>Unsupervised Learning</li>
+        <li>Model Evaluation</li>
+        <li>Scikit-learn</li>
+      </ul>
+    </div>
+
+    <!-- MODULE 6 -->
+    <div class="module-card">
+      <div class="module-header">
+        <span class="module-number">06</span>
+        <h3>Deep Learning</h3>
+      </div>
+      <ul class="lesson-list">
+        <li>Neural Networks</li>
+        <li>TensorFlow & Keras</li>
+        <li>CNN Basics</li>
+        <li>ANN & RNN</li>
+      </ul>
+    </div>
+
+    <!-- MODULE 7 -->
+    <div class="module-card">
+      <div class="module-header">
+        <span class="module-number">07</span>
+        <h3>SQL & Databases</h3>
+      </div>
+      <ul class="lesson-list">
+        <li>SQL Basics</li>
+        <li>Joins & Subqueries</li>
+        <li>Database Design</li>
+        <li>Real-world Queries</li>
+      </ul>
+    </div>
+
+    <!-- MODULE 8 -->
+    <div class="module-card">
+      <div class="module-header">
+        <span class="module-number">08</span>
+        <h3>Real-World Projects</h3>
+      </div>
+      <ul class="lesson-list">
+        <li>Data Analysis Project</li>
+        <li>Machine Learning Project</li>
+        <li>End-to-End Case Study</li>
+        <li>Deployment Basics</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="cta-section">
+  <h2>Ready to Become a Data Scientist?</h2>
+  <button id="enrollBtn" class="enroll-btn" class="cta-btn" >Enroll Now</button>
+  <div id="enrollModal" class="modal">
+    <div class="modal-box">
+        <h3>Enrollment Details</h3>
+
+        <form id="enrollForm">
+            <input id="name" placeholder="Name" required />
+            <input id="phone" placeholder="Phone" required />
+            <input id="email" placeholder="Email" required />
+            <input id="college" placeholder="College" required />
+            <label>
+                <input type="checkbox" id="terms" required /> Accept Terms
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+
+
+        <span class="close">&times;</span>
+    </div>
+  </div>
+
+</section>
+
+
+<script>
+    const modal = document.getElementById("enrollModal");
+    const enrollBtn = document.getElementById("enrollBtn");
+    const closeBtn = document.querySelector(".close");
+
+    enrollBtn.onclick = () => modal.style.display = "flex";
+    closeBtn.onclick = () => modal.style.display = "none";
+
+
+
+    document.getElementById("enrollForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const formData = {
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value,
+    email: document.getElementById("email").value,
+    college: document.getElementById("college").value,
+    terms: document.getElementById("terms").checked ? "Yes" : "No"
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbw4jHbolDvAfXBIvqjp8uOkvNIeCbFSsjHPcB0C_H2bVYGxPxaiylq1F7Nxm8QfdxgP4Q/exec", {
+    method: "POST",
+    mode: "no-cors", // prevents CORS blocking
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(() => {
+    alert("Enrollment successful!");
+    document.getElementById("enrollForm").reset();
+  })
+  .catch(() => {
+    alert("Network error. Please try again.");
+  });
+});
+</script>
+
+
+</body>
+</html>
